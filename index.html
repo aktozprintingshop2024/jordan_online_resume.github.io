@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Jordan Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              brand: {
+                accent: '#FB3640',
+                neon: '#00F0FF',
+                dark: '#0A0D14',
+                surface: '#111726',
+                border: '#1F293D'
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #0A0D14;
+        color: #E2E8F0;
+      }
+
+      .neon-glow-blue {
+        box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.35);
+      }
+
+      .neon-text-blue {
+        text-shadow: 0 0 16px rgba(0, 240, 255, 0.5);
+      }
+
+      .neon-border-blue:hover {
+        border-color: #00F0FF;
+        box-shadow: 0 0 20px -3px rgba(0, 240, 255, 0.3);
+      }
+
+      .accent-glow-red {
+        box-shadow: 0 0 25px -5px rgba(251, 54, 64, 0.35);
+      }
+    </style>
+  </head>
+  <body class="bg-[#0A0D14] text-slate-200 antialiased selection:bg-[#FB3640] selection:text-white min-h-screen flex flex-col justify-between">
+    <!-- ========================================== -->
+    <!-- NAVIGATION -->
+    <!-- ========================================== -->
+    <header class="sticky top-0 z-50 backdrop-blur-md bg-[#0A0D14]/80 border-b border-[#1F293D]">
+      <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+        <!-- EDIT: NAVBAR_BRAND -->
+        <a class="text-xl font-bold tracking-wider text-white flex items-center gap-2 group" href="#">
+          <span class="w-2.5 h-2.5 rounded-full bg-[#00F0FF] group-hover:bg-[#FB3640] transition-colors duration-300"></span>
+          <span class="neon-text-blue">Portfolio</span>
+        </a>
+        <!-- Navigation Links -->
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+          <a class="hover:text-[#00F0FF] transition-colors flex items-center gap-1.5" href="#about">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-4 h-4 text-[#00F0FF]">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg> About </a>
+          <a class="hover:text-[#00F0FF] transition-colors flex items-center gap-1.5" href="#projects">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code-2" aria-hidden="true" class="lucide lucide-code-2 w-4 h-4 text-[#00F0FF]">
+              <path d="m18 16 4-4-4-4"></path>
+              <path d="m6 8-4 4 4 4"></path>
+              <path d="m14.5 4-5 16"></path>
+            </svg> Work Experience </a>
+          <a class="hover:text-[#00F0FF] transition-colors flex items-center gap-1.5" href="#skills">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="cpu" aria-hidden="true" class="lucide lucide-cpu w-4 h-4 text-[#00F0FF]">
+              <path d="M12 20v2"></path>
+              <path d="M12 2v2"></path>
+              <path d="M17 20v2"></path>
+              <path d="M17 2v2"></path>
+              <path d="M2 12h2"></path>
+              <path d="M2 17h2"></path>
+              <path d="M2 7h2"></path>
+              <path d="M20 12h2"></path>
+              <path d="M20 17h2"></path>
+              <path d="M20 7h2"></path>
+              <path d="M7 20v2"></path>
+              <path d="M7 2v2"></path>
+              <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+              <rect x="8" y="8" width="8" height="8" rx="1"></rect>
+            </svg> Skills</a>
+          <a class="hover:text-[#00F0FF] transition-colors flex items-center gap-1.5" href="#contact">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail w-4 h-4 text-[#00F0FF]">
+              <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+            </svg> Contact </a>
+        </nav>
+        <!-- Mobile Menu Toggle Button (Icon only) -->
+        <div class="md:hidden flex items-center">
+          <button aria-label="Toggle navigation" class="text-slate-400 hover:text-[#00F0FF] p-2" id="menu-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="menu" aria-hidden="true" class="lucide lucide-menu w-6 h-6">
+              <path d="M4 5h16"></path>
+              <path d="M4 12h16"></path>
+              <path d="M4 19h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <!-- Mobile Navigation Drawer -->
+      <div class="hidden md:hidden border-b border-[#1F293D] bg-[#0A0D14] px-6 py-4 space-y-3" id="mobile-menu">
+        <a class="block text-sm font-medium text-slate-300 hover:text-[#00F0FF]" href="#about">About</a>
+        <a class="block text-sm font-medium text-slate-300 hover:text-[#00F0FF]" href="#projects">WORK</a>
+        <a class="block text-sm font-medium text-slate-300 hover:text-[#00F0FF]" href="#skills">Skills</a>
+        <a class="block text-sm font-medium text-slate-300 hover:text-[#00F0FF]" href="#contact">Contact</a>
+      </div>
+    </header>
+    <main class="flex-grow">
+      <!-- ========================================== -->
+      <!--  /  -->
+      <!-- ========================================== -->
+      <section class="relative py-20 md:py-32 overflow-hidden border-b border-[#1F293D]/60" id="MeProfile">
+        <!-- Background subtle glow accents -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#00F0FF]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/3 right-10 w-80 h-80 bg-[#FB3640]/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+          <div class="flex flex-col-reverse md:flex-row items-center justify-between gap-12 md:gap-16">
+            <div class="flex-1 text-center md:text-left space-y-6">
+              <!-- Decorative icon and profession label -->
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#111726] border border-[#1F293D] text-[#00F0FF] text-xs font-mono uppercase tracking-wider">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="terminal" aria-hidden="true" class="lucide lucide-terminal w-3.5 h-3.5">
+                  <path d="M12 19h8"></path>
+                  <path d="m4 17 6-6-6-6"></path>
+                </svg>
+                <span class="">ONLINE RESUME</span>
+              </div>
+              <!-- EDIT: YOUR_NAME -->
+              <h1 class="text-6xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-tight">Jordan </h1>
+              <!-- EDIT: YOUR_JOB_TITLE -->
+              <h2 class="text-x4 sm:text-5xl font-semibold text-[#00F0FF] neon-text-blue"> IT SPECIALIST </h2>
+              <!-- EDIT: SHORT_INTRODUCTION -->
+              <p class="text-base sm:text-lg text-slate-400 max-w-xl leading-relaxed"> Looking for a part-time job </p>
+              <!-- Only allowed CTA in MeProfile linked directly to projects -->
+              <div class="pt-2">
+                <a class="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm text-white bg-gradient-to-r from-[#FB3640] to-[#E0222C] hover:opacity-95 transition-all shadow-lg shadow-[#FB3640]/20 hover:scale-[1.02] active:scale-[0.98]" href="#projects">
+                  <span class="">WORK EXPERIENCE</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-down" aria-hidden="true" class="lucide lucide-arrow-down w-4 h-4">
+                    <path d="M12 5v14"></path>
+                    <path d="m19 12-7 7-7-7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            <!-- MeProfile Profile Image -->
+            <div class="flex-shrink-0 relative">
+              <div class="relative w-56 h-56 sm:w-64 sm:h-64 rounded-2xl p-1 bg-gradient-to-br from-[#00F0FF]/40 via-[#1F293D] to-[#FB3640]/30 shadow-2xl neon-glow-blue">
+                <div class="w-full h-full rounded-2xl overflow-hidden bg-[#111726] flex items-center justify-center">
+                  <!-- EDIT: PROFILE_IMAGE -->
+                  <img alt="Me Profile" class="w-full h-full object-cover" src="images/Me.PNG">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- ABOUT -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-[#1F293D]/60 bg-[#0C101A]" id="about">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="flex items-center gap-3 mb-8">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="user" aria-hidden="true" class="lucide lucide-user w-5 h-5 text-[#00F0FF]">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">About</h2>
+          </div>
+          <div class="p-8 rounded-2xl bg-[#111726] border border-[#1F293D] transition-colors neon-border-blue">
+            <!-- EDIT: ABOUT_TEXT -->
+            <p class="text-slate-300 text-lg leading-relaxed">I'm an IT Support professional with nearly 8 years of experience in hardware and software troubleshooting, technical support, and IT operations.
+
+            Beyond IT Support, I have a strong interest in software development and a working knowledge of programming and web development. While I am still building my professional experience in this field, I continuously enhance my skills through self-learning and personal projects.
+
+            I believe in continuous learning, problem-solving, and embracing new technologies to grow as a well-rounded IT professional..</p>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- PROJECTS / WORK SAMPLES -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-[#1F293D]/60" id="projects">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="flex items-center gap-3 mb-12">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="folder-git-2" aria-hidden="true" class="lucide lucide-folder-git-2 w-5 h-5 text-[#00F0FF]">
+              <path d="M18 19a5 5 0 0 1-5-5v8"></path>
+              <path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"></path>
+              <circle cx="13" cy="12" r="2"></circle>
+              <circle cx="20" cy="19" r="2"></circle>
+            </svg>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight ">Work Experience</h2>
+          </div>
+          <!-- Exactly 3 Reusable Project Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <!-- Project Card 1 -->
+            <div class="flex flex-col bg-[#111726] rounded-2xl border border-[#1F293D] overflow-hidden transition-all duration-300 hover:border-[#00F0FF] hover:-translate-y-1">
+              <div class="aspect-video w-full bg-[#182033] overflow-hidden">
+                <!-- EDIT: PROJECT_1_IMAGE -->
+                <img alt="Add your image here" class="w-full h-full object-cover" src="images\tdcx.PNG">
+              </div>
+              <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                <div class="space-y-2">
+                  <!-- EDIT: PROJECT_1_TITLE -->
+                  <h3 class="text-xl font-bold text-white">TDCX Philippines </h3>
+                  <h3 class="text-xl font-bold text-white">May 2021 - PRESENT</h3>
+                  <!-- EDIT: PROJECT_1_DESCRIPTION -->
+                  <p class="text-slate-400 text-sm leading-relaxed">Knowldegeable in Remote Desktop, Zoho, NinjaOne, Google Workspace, O365, Microsoft Entra, ChromeOS, Active Directory, VPN </p>
+                  <p class="text-slate-400 text-sm leading-relaxed">Monitor the SLA for IT tickets and provide timely resolutions</p>
+                </div>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_1_LINK -->
+                  <a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00F0FF] hover:text-[#FB3640] transition-colors" href="https://www.tdcx.com/">
+                    <span class="">Company Website</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="external-link" aria-hidden="true" class="lucide lucide-external-link w-4 h-4">
+                      <path d="M15 3h6v6"></path>
+                      <path d="M10 14 21 3"></path>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 2 -->
+            <div class="flex flex-col bg-[#111726] rounded-2xl border border-[#1F293D] overflow-hidden transition-all duration-300 hover:border-[#00F0FF] hover:-translate-y-1">
+              
+              <div class="w-full h-36 bg-black overflow-hidden flex items-center justify-center">
+                <!-- EDIT: PROJECT_2_IMAGE -->
+                <img alt="Add your image here"  class="w-full h-full object-contain object-center" src="images\curoTek.PNG">
+              </div>
+              <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                <div class="space-y-2">
+                  <!-- EDIT: PROJECT_2_TITLE -->
+                  <h3 class="text-xl font-bold text-white">Curo Teknika </h3>
+                  <h3 class="text-xl font-bold text-white">Dec 2020 - May 2021</h3>
+                  <!-- EDIT: PROJECT_2_DESCRIPTION -->
+                  <p class="text-slate-400 text-sm leading-relaxed">Knowledgeable in, O365, Remote Desktop, Citrix, VPN, ticketing systems, VMWARE, Vsphere</p>
+                  <p class="text-slate-400 text-sm leading-relaxed">Assist end users with their concerns regarding Work From Home and on-site work arrangements.</p>
+                </div>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_2_LINK -->
+                  <a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00F0FF] hover:text-[#FB3640] transition-colors" href="https://www.facebook.com/CuroTeknikaOfficial">
+                    <span class="">Company Website</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="external-link" aria-hidden="true" class="lucide lucide-external-link w-4 h-4">
+                      <path d="M15 3h6v6"></path>
+                      <path d="M10 14 21 3"></path>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 3 -->
+           <div class="flex flex-col bg-[#111726] rounded-2xl border border-[#1F293D] overflow-hidden transition-all duration-300 hover:border-[#00F0FF] hover:-translate-y-1">
+                <div class="w-full h-36 bg-white overflow-hidden flex items-center justify-center">
+                <!-- EDIT: PROJECT_3_IMAGE -->
+                <img alt="GoodHand"  class="w-full h-full object-cover object-center" src="images/goodhand.JPG">
+              </div>
+              <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                <div class="space-y-2">
+                  <!-- EDIT: PROJECT_3_TITLE -->
+                  <h3 class="text-xl font-bold text-white">GoodHand Security </h3>
+                  <!-- EDIT: PROJECT_3_DESCRIPTION -->
+                  <h3 class="text-xl font-bold text-white">Aug 2019 - Feb 2020</h3>
+                  <p class="text-slate-400 text-sm leading-relaxed">Knowledgeable in POE switch, DVR, NVR and other related equipment</p>
+                  <p class="text-slate-400 text-sm leading-relaxed">Basic installation and configuration of IP and Analog CCTV systems and Biometrics</p>
+                </div>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_3_LINK -->
+                  <a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00F0FF] hover:text-[#FB3640] transition-colors" href="#">
+                    <span class="">Company Website</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="external-link" aria-hidden="true" class="lucide lucide-external-link w-4 h-4">
+                      <path d="M15 3h6v6"></path>
+                      <path d="M10 14 21 3"></path>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 4 -->
+           <div class="flex flex-col bg-[#111726] rounded-2xl border border-[#1F293D] overflow-hidden transition-all duration-300 hover:border-[#00F0FF] hover:-translate-y-1">
+                <div class="w-full h-36 bg-white overflow-hidden flex items-center justify-center">
+                <!-- EDIT: PROJECT_4_IMAGE -->
+                <img alt="dpoint" class="w-full h-full object-contain" src="images/dpoint.jpg">
+              </div>
+              <div class="p-6 flex flex-col flex-grow justify-between space-y-4">
+                <div class="space-y-2">
+                  <!-- EDIT: PROJECT_4_TITLE -->
+                  <h4 class="text-xl font-bold text-white">DPoint-Technologies</h4>
+                  <h3 class="text-xl font-bold text-white">Aug 2017 - Dec 2018</h3>
+                  <!-- EDIT: PROJECT_4_DESCRIPTION -->
+                  <p class="text-slate-400 text-sm leading-relaxed">Monitor and maintain all the hotel equipment like avaya, pabx, biometrics, cctv, server and switches every floor.</p>
+                </div>
+                <div class="pt-2">
+                  <!-- EDIT: PROJECT_4_LINK -->
+                  <a class="inline-flex items-center gap-1.5 text-sm font-semibold text-[#00F0FF] hover:text-[#FB3640] transition-colors" href="https://dpointtechnologies.com/">
+                    <span class="">Company Website</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="external-link" aria-hidden="true" class="lucide lucide-external-link w-4 h-4">
+                      <path d="M15 3h6v6"></path>
+                      <path d="M10 14 21 3"></path>
+                      <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- SKILLS / TOOLS -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-[#1F293D]/60 bg-[#0C101A]" id="skills">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="flex items-center gap-3 mb-12">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="sparkles" aria-hidden="true" class="lucide lucide-sparkles w-5 h-5 text-[#00F0FF]">
+              <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path>
+              <path d="M20 2v4"></path>
+              <path d="M22 4h-4"></path>
+              <circle cx="4" cy="20" r="2"></circle>
+            </svg>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Skills &amp; Tools</h2>
+          </div>
+          <!-- Exactly 2 Reusable Cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Card 1: Skills -->
+            <div class="p-8 rounded-2xl bg-[#111726] border border-[#1F293D] transition-all hover:border-[#00F0FF]">
+              <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[#1F293D]">
+                <div class="w-10 h-10 rounded-xl bg-[#00F0FF]/10 text-[#00F0FF] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code" aria-hidden="true" class="lucide lucide-code w-5 h-5">
+                    <path d="m16 18 6-6-6-6"></path>
+                    <path d="m8 6-6 6 6 6"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white">Certification and Others</h3>
+              </div>
+              <!-- EDIT: SKILLS_LIST -->
+              <ul class="space-y-3.5 text-slate-300">
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check w-4 h-4 text-[#00F0FF] flex-shrink-0">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span class="">Zuitt Workshop Certificate of Completion: Prompt, Publish, Flex</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check w-4 h-4 text-[#00F0FF] flex-shrink-0">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span class="">Knowledgeable in Python, HTML, CSS and AI tools</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check w-4 h-4 text-[#00F0FF] flex-shrink-0">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span class="">Software and Hardware Support</span>
+                </li>
+              </ul>
+            </div>
+            <!-- Card 2: Tools / Technologies -->
+            <div class="p-8 rounded-2xl bg-[#111726] border border-[#1F293D] transition-all hover:border-[#00F0FF]">
+              <div class="flex items-center gap-3 mb-6 pb-4 border-b border-[#1F293D]">
+                <div class="w-10 h-10 rounded-xl bg-[#FB3640]/10 text-[#FB3640] flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="wrench" aria-hidden="true" class="lucide lucide-wrench w-5 h-5">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"></path>
+                  </svg>
+                </div>
+                <h3 class="text-xl font-bold text-white">Tools / Technologies</h3>
+              </div>
+              <!-- EDIT: TOOLS_LIST -->
+              <ul class="space-y-3.5 text-slate-300">
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check w-4 h-4 text-[#FB3640] flex-shrink-0">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span class="">RDP, NinjaOne, ZOHO, AD, O365, VPN</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check w-4 h-4 text-[#FB3640] flex-shrink-0">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span class="">ChromeOS, macOS, Citrix, VMWARE, VSPHERE</span>
+                </li>
+                <li class="flex items-center gap-3">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" aria-hidden="true" class="lucide lucide-check w-4 h-4 text-[#FB3640] flex-shrink-0">
+                    <path d="M20 6 9 17l-5-5"></path>
+                  </svg>
+                  <span class="">CCTV, DVR, NVR, Biometrics, PABX, printer  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========================================== -->
+      <!-- CONTACT -->
+      <!-- ========================================== -->
+      <section class="py-20 border-b border-[#1F293D]/60" id="contact">
+        <div class="max-w-4xl mx-auto px-6">
+          <div class="flex items-center gap-3 mb-10">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail-check" aria-hidden="true" class="lucide lucide-mail-check w-5 h-5 text-[#00F0FF]">
+              <path d="M22 13V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v12c0 1.1.9 2 2 2h8"></path>
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              <path d="m16 19 2 2 4-4"></path>
+            </svg>
+            <h2 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">Contact</h2>
+          </div>
+          <div class="p-8 sm:p-10 rounded-2xl bg-[#111726] border border-[#1F293D] space-y-6">
+            <div class="flex flex-col sm:flex-row gap-6 sm:gap-12">
+              <!-- Email Item -->
+              <div class="flex items-center gap-3.5 text-slate-300">
+                <div class="w-10 h-10 rounded-xl bg-[#00F0FF]/10 text-[#00F0FF] flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" aria-hidden="true" class="lucide lucide-mail w-5 h-5">
+                    <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+                    <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  </svg>
+                </div>
+                <div>
+                  <!-- EDIT: CONTACT_EMAIL -->
+                  <p class="text-base font-medium text-white">a.k.to.z.printingshop2024@gmail.com</p>
+                </div>
+              </div>
+              <!-- Contact Information Item -->
+              <div class="flex items-center gap-3.5 text-slate-300">
+                <div class="w-10 h-10 rounded-xl bg-[#00F0FF]/10 text-[#00F0FF] flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="phone" aria-hidden="true" class="lucide lucide-phone w-5 h-5">
+                    <path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path>
+                  </svg>
+                </div>
+                <div>
+                  <!-- EDIT: CONTACT_INFO -->
+                  <p class="text-base font-medium text-white">Email me</p>
+                </div>
+              </div>
+              <!-- Social Link Item -->
+              <div class="flex items-center gap-3.5 text-slate-300">
+                <div class="w-10 h-10 rounded-xl bg-[#FB3640]/10 text-[#FB3640] flex items-center justify-center flex-shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="share-2" aria-hidden="true" class="lucide lucide-share-2 w-5 h-5">
+                    <circle cx="18" cy="5" r="3"></circle>
+                    <circle cx="6" cy="12" r="3"></circle>
+                    <circle cx="18" cy="19" r="3"></circle>
+                    <line x1="8.59" x2="15.42" y1="13.51" y2="17.49"></line>
+                    <line x1="15.41" x2="8.59" y1="6.51" y2="10.49"></line>
+                  </svg>
+                </div>
+                <div>
+                  <!-- EDIT: CONTACT_SOCIAL_LINK -->
+                  <a class="text-base font-medium text-[#00F0FF] hover:text-[#FB3640] transition-colors underline decoration-[#1F293D] hover:decoration-[#FB3640]" href="#"> HOME </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- ========================================== -->
+    <!-- FOOTER -->
+    <!-- ========================================== -->
+    <footer class="py-8 bg-[#070A0F] border-t border-[#1F293D] text-slate-400 text-sm">
+      <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#00F0FF]"></span>
+          <!-- EDIT: FOOTER_BRAND -->
+          <span class="font-semibold text-white">BACHELOR OF SCIENCE IN INFORMATION TECHNOLOGY</span>
+        </div>
+        <!-- EDIT: FOOTER_COPYRIGHT -->
+        <p class="text-xs text-slate-400">© <span id="year" class="">2026</span> Portfolio. All rights reserved. </p>
+      </div>
+    </footer>
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons();
+      // Mobile menu toggle
+      const menuBtn = document.getElementById('menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+      // Set dynamic year
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
